@@ -46,6 +46,10 @@ def TurnSnake(event):
 def AppleHit():
    global apple
    apple.goto(random.randint(-150, 150), random.randint(-150, 150))
+   if (apple.xcor() % 20 != 0):
+      apple.setx(apple.xcor() - apple.xcor()%20)
+   if (apple.ycor() % 20 != 0):
+      apple.sety(apple.ycor() - apple.ycor()%20)
 
 AppleHit()
 SnakeForward()
